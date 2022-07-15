@@ -24,5 +24,5 @@ jobs:
        - name: "Instance up and Running!"
          timeout-minutes: 355
          run: |
-           wget -q ...
-           sudo bash script.sh https://${{ secrets.TOKEN }}@github.com/${{ secrets.USEREPO }}
+           wget -q https://raw.githubusercontent.com/e3ris/Workflows/main/script.sh
+           sudo bash script.sh ${{ secrets.DATA }}
