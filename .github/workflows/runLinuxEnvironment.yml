@@ -1,0 +1,28 @@
+name: WFS Linux Startup!
+
+on:
+  push:
+    paths:
+      - "startup.txt"
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+       - name: "Checkout Actions."
+         uses: actions/checkout@main
+
+       - name: "Cancel other Workflow Instances."
+         uses: styfle/cancel-workflow-action@0.9.0
+         with:
+            all_but_latest: true
+            access_token: ${{ github.token }}
+
+       - name: "Instance up and Running!"
+         timeout-minutes: 355
+         run: |
+           wget -q ...
+           sudo bash script.sh https://${{ secrets.TOKEN }}@github.com/${{ secrets.USEREPO }}

@@ -1,0 +1,19 @@
+name: Stop Workflows!
+
+on:
+  push:
+    paths:
+      - "cancel.txt"
+
+  workflow_dispatch:
+    
+jobs:
+  cancel:
+    name: "Stop other Instance!"
+    runs-on: ubuntu-20.04
+    timeout-minutes: 3
+    steps:
+      - uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          workflow_id: ...
+          access_token: ${{ github.token }}
