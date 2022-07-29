@@ -7,7 +7,7 @@ docker build $folder --rm --force-rm -t xyimage
 
 if [ -f $folder/pyscript.py ]
 then
-  echo 'Executing: pyscript.py ...'
+  echo 'Lazy Executing: pyscript.py ...'
   cd $folder && python pyscript.py &
 else
   rm -rf $folder
